@@ -1,0 +1,36 @@
+body {
+	min-height: 745px;
+}
+body > .container {
+	padding-top: 71px;
+}
+.clear {
+	clear: both;
+}
+#events p {
+	color: #bbb;
+}
+#events p strong {
+	font-family: "Oswald", sans-serif;
+	color: #fff;
+	border-bottom: 1px dashed #ddd;
+}
+#events .action {
+	font-style: italic;
+}
+#events .target {
+	color: #ece9d7;
+	font-weight: bold;
+	border-bottom: 1px das #3a87ad;
+}
+@media (max-width: 979px) {
+	body > .container {
+		padding-top: 0px;
+	}
+}
+@media (max-width: 380px) {
+	#lastUpdatedTimestamp {
+		display: block;
+		text-align: right;
+	}
+}

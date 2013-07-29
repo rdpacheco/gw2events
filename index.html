@@ -1,0 +1,64 @@
+<html>
+<head>
+	<title>GW2 Events</title>
+	<link href="assets/css/bootstrap-superhero.min.css" rel="stylesheet" />
+	<link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
+	<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="assets/css/custom.css" rel="stylesheet" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+	<!-- Navbar -->
+	<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#">Guild Wars 2 Events</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main -->
+    <div class="container">
+	    <span id="lastUpdated" class="badge pull-right">
+	    	Last updated: <span id="lastUpdatedTimestamp"></span>
+	    </span>
+      <div class="btn-group" id="map-dropdown">
+	    <button class="btn dropdown-toggle" data-toggle="dropdown">
+	      <span id="mapTitle">Map</span>
+	      <span class="caret"></span>
+	    </button>
+	    <ul class="dropdown-menu" id="mapNameNav"></ul>
+	  </div>
+    	<div id="events" class="clear"></div>
+    </div>
+
+    <!-- Templates -->
+	<script type="text/template" id="event-entry-template">
+		<p data-event-id="<%- event_id %>"><% if (nickname) { %><strong><%- nickname %></strong> - <% } %><%= event_name %></p>
+	</script>
+	<script type="text/template" id="event-state-template">
+		<h4 class="alert alert-<%- label %>"><%- state %></h4>
+	</script>
+	<script type="text/template" id="map-name-template">
+		<li><a href="#<%- id %>"><%- name %></a></li>
+	</script>
+
+	<!-- Scripts -->
+	<script src="assets/lib/jquery.min.js"></script>
+	<script src="assets/lib/underscore-min.js"></script>
+	<script src="assets/lib/backbone.min.js"></script>
+	<script>
+        var RDP = {};
+    </script>
+    <script src="assets/js/utils/RDPObject.js"></script>
+    <script src="assets/js/utils/storage.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/views.js"></script>
+    <script src="assets/js/events.js"></script>
+	<script src="assets/lib/bootstrap.min.js"></script>
+    <script>
+        RDP.events = new RDP.GWEvents();
+    </script>
+</body>
+</html>
