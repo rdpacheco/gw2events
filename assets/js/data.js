@@ -41,12 +41,16 @@
         var
             constr = this.constructor,
             def = new $.Deferred(),
+            localData,
             data;
 
         // Grab from local storage
         if (useCache) {
-            data = constr.storage.get(dataOpts.type);
-            data = def.resolve(data ? JSON.parse(data) : data);
+            localData = constr.storage.get(dataOpts.type);
+            if (localData) {
+                data = def;
+                data.resolve(JSON.parse(localData));
+            }
         }
 
         // Grab from server
@@ -66,7 +70,7 @@
     // Get data by type
     GWData.prototype.getDataByType = function (type, mapID) {
         var dataOpts = {
-            type: type,
+            dataType: type,
             mapID: mapID
         };
         if (type === "event") {

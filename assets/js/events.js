@@ -40,6 +40,7 @@
             mapNamesData
         )
         .then(function (eventResp, nameResp, mapResp) {
+            console.log(arguments);
             self.views.render({
                 eventData: eventResp.eventData,
                 eventNames: nameResp.eventNames,
