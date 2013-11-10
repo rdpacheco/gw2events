@@ -45,7 +45,6 @@
             "Fail"
         ];
         
-        /* @TODO: Don't write such bad code */
         return _(evData).sortBy(function (ev) {
             var order = (stateOrder.indexOf(ev.state) + 1) * 10;
             ev.nickname = false;
