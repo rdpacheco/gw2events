@@ -1,4 +1,6 @@
 /* @TODO: Convert all this code into a class */
+
+/* @TODO: Do ALL of the things! */
 (function ($) {
     "use strict";
     var
