@@ -8,7 +8,7 @@
 	<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body ng-app="gw2events">
+<body ng-app="gw2events" ng-controller="DashboardCtrl">
 
 	<!-- Navbar -->
 	<div class="navbar navbar-inverse navbar-fixed-top">
@@ -31,7 +31,12 @@
 	    </button>
 	    <ul class="dropdown-menu" id="mapNameNav"></ul>
 	  </div>
-    	<div id="events" class="clear"></div>
+    	<div id="events" class="clear">
+            <div ng-repeat="event in events">
+                <h4 class="alert alert-{{ event.stateLabel }}">{{ event.state }}</h4>
+                <p data-event-id="{{  event.id }}"><strong ng-if="event.nickname">{{ event.nickname }} - </strong>{{ event.name }}</p>
+            </div>
+        </div>
     </div>
 
     <!-- Templates -->
@@ -67,5 +72,6 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
 
     <script src="app.js"></script>
+    <script src="dashboard/controllers/dashboard/dashboard.js"></script>
 </body>
 </html>
