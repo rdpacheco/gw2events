@@ -1,13 +1,14 @@
 <html>
 <head>
 	<title>GW2 Events</title>
-	<link href="assets/css/bootstrap-superhero.min.css" rel="stylesheet" />
+	<!--<link href="assets/css/bootstrap-superhero.min.css" rel="stylesheet" />
 	<link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
 	<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
-	<link href="assets/css/custom.css" rel="stylesheet" />
+	<link href="assets/css/custom.css" rel="stylesheet" />-->
+	<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
+<body ng-app="gw2events">
 
 	<!-- Navbar -->
 	<div class="navbar navbar-inverse navbar-fixed-top">
@@ -45,7 +46,7 @@
 	</script>
 
 	<!-- Scripts -->
-	<script src="assets/lib/jquery.min.js"></script>
+	<!--<script src="assets/lib/jquery.min.js"></script>
 	<script src="assets/lib/underscore-min.js"></script>
 	<script src="assets/lib/backbone.min.js"></script>
 	<script>
@@ -59,6 +60,12 @@
 	<script src="assets/lib/bootstrap.min.js"></script>
     <script>
         RDP.events = new RDP.GWEvents();
-    </script>
+    </script>-->
+
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+
+    <script src="app.js"></script>
 </body>
 </html>
